@@ -1,271 +1,125 @@
-
-game_board = [[1, 2, 3],
-             [4, 5, 6],
-             [7, 8, 9]]
-
-def show_board():
+game_board = [[1,2,3],
+              [4,5,6],
+              [7,8,9]]
+def showboard():
     for row in game_board:
         print(row)
-show_board()
-
-print("Please Type the name of the first player")
-name1 = input()
-print("Welcome to the game " + name1 + "!")
-
-print("Type the place where " + name1 + " wants to place on")
-show_board()
- # why tho
-position1 = int(input())
-
-def plotting_x():
-    if position1 == game_board[0][0]:
+def start():
+    showboard()
+    print("Please type the name of the first player along with surname if you like xD")
+    global name1
+    name1 = input()
+    print("The name of the first player is " + name1)
+    showboard()
+start()
+def everthing1():
+    print("Please type where " + name1 +  " want to place on the board")
+    input1 = int(input())
+    if input1 == game_board[0][0] :
         game_board[0][0] = "X"
-        show_board()
-    elif position1 == game_board[0][1]:
-        game_board[0][1] = "X"
-        show_board()
-    elif position1 == game_board[0][2]:
+    elif input1 == game_board[0][1]:
+        game_board[0][1] ="X"
+    elif input1 == game_board[0][2]:
         game_board[0][2] = "X"
-        show_board()
-    elif position1 == game_board[1][0]:
+    elif input1 == game_board[1][0]:
         game_board[1][0] = "X"
-        show_board()
-    elif position1 == game_board[1][1]:
+    elif input1 == game_board[1][1]:
         game_board[1][1] = "X"
-        show_board()
-    elif position1 == game_board[1][2]:
+    elif input1 == game_board[1][2]:
         game_board[1][2] = "X"
-        show_board()
-    elif position1 == game_board[2][0]:
+    elif input1 == game_board[2][0]:
         game_board[2][0] = "X"
-        show_board()
-    elif position1 == game_board[2][1]:
+    elif input1 == game_board[2][1]:
         game_board[2][1] = "X"
-        show_board()
-    elif position1 == game_board[2][2]:
+    elif input1 == game_board[2][2]:
         game_board[2][2] = "X"
-        show_board()
-plotting_x()
-
-print("Please Type the name of the second player")
-name2 = input()
-print("Welcome to the game " + name2 + "!")
-
-print("Type the place where " + name2 + " wants to place")
-show_board()
-
-
-position2 = int(input())
-
-def plotting_y():
-    if position2 == game_board[0][0]:
-        game_board[0][0] = "Y"
-        show_board()
-    elif position2 == game_board[0][1]:
-        game_board[0][1] = "Y"
-        show_board()
-    elif position2 == game_board[0][2]:
-        game_board[0][2] = "Y"
-        show_board()
-    elif position2 == game_board[1][0]:
-        game_board[1][0] = "Y"
-        show_board()
-    elif position2 == game_board[1][1]:
-        game_board[1][1] = "Y"
-        show_board()
-    elif position2 == game_board[1][2]:
-        game_board[1][2] = "Y"
-        show_board()
-    elif position2 == game_board[2][0]:
-        game_board[2][0] = "Y"
-        show_board()
-    elif position2 == game_board[2][1]:
-        game_board[2][1] = "Y"
-        show_board()
-    elif position2 == game_board[2][2]:
-        game_board[2][2] = "Y"
-        show_board()
-plotting_y()
-
-print("It is now the chance of " + name1)
-position1 = int(input())
-plotting_x()
-if game_board[0][0] == "X" and game_board[1][1] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" +" wins CONGRATS!" )
-elif game_board[0][0] == "Y" and game_board[1][1] == "Y" and game_board[2][2] == "Y":
-    print("Strike " + name2 + "" +" wins congrats!" )
-elif game_board[0][2] == "X" and game_board[1][1] == "X" and game_board[2][0] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][2] == "Y" and game_board[1][1] == "Y" and game_board[2][0] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-#the above is diagnol win
-
-if game_board[0][0] == "X" and game_board[1][0] == "X" and game_board[2][0] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][0] == "Y" and game_board[1][0] == "Y" and game_board[2][0] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-
-elif game_board[0][1] == "X" and game_board[1][1] == "X" and game_board[2][1] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][1] == "Y" and game_board[1][1] == "Y" and game_board[2][1] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-
-elif game_board[0][2] == "X" and game_board[1][2] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][2] == "Y" and game_board[1][2] == "Y" and game_board[2][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-# the above is vertical win
-if game_board[0][0] == "X" and game_board[0][1] == "X" and game_board[0][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][0] == "Y" and game_board[0][1] == "Y" and game_board[0][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-
-elif game_board[1][0] == "X" and game_board[1][1] == "X" and game_board[1][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[1][0] == "Y" and game_board[1][1] == "Y" and game_board[1][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-
-elif game_board[2][0] == "X" and game_board[2][1] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[2][0] == "X" and game_board[2][1] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-#the above is horizontal win
-else:
+    showboard()
+everthing1()
+def start2():
+    print("Please type the name of the second player wants also the surname is you want! xD")
+    global name2
+    name2 = input()
+    print("The name of the second player is " + name2)
+start2()
+def everthing2():
     print("It is now the chance of " + name2)
-    position2 = int(input())
-    plotting_y()
-if game_board[0][0] == "X" and game_board[1][1] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" +" wins CONGRATS!" )
-elif game_board[0][0] == "Y" and game_board[1][1] == "Y" and game_board[2][2] == "Y":
-    print("Strike " + name2 + "" +" wins congrats!" )
-elif game_board[0][2] == "X" and game_board[1][1] == "X" and game_board[2][0] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][2] == "Y" and game_board[1][1] == "Y" and game_board[2][0] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-#the above is diganol win
-elif game_board[0][0] == "X" and game_board[1][0] == "X" and game_board[2][0] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][0] == "Y" and game_board[1][0] == "Y" and game_board[2][0] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
+    showboard()
+    input2 = int(input())
+    if input2 == game_board[0][0]:
+        game_board[0][0] = "O"
+    elif input2 == game_board[0][1]:
+        game_board[0][1] = "O"
+    elif input2 == game_board[0][2]:
+        game_board[0][2] = "O"
+    elif input2 == game_board[1][0]:
+        game_board[1][0] = "O"
+    elif input2 == game_board[1][1]:
+        game_board[1][1] = "O"
+    elif input2 == game_board[1][2]:
+        game_board[1][2] = "O"
+    elif input2 == game_board[2][0]:
+        game_board[2][0] = "O"
+    elif input2 == game_board[2][1]:
+        game_board[2][1] = "O"
+    elif input2 == game_board[2][2]:
+        game_board[2][2] = "O"
+    showboard()
 
-elif game_board[0][1] == "X" and game_board[1][1] == "X" and game_board[2][1] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][1] == "Y" and game_board[1][1] == "Y" and game_board[2][1] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
+def logic1():
+    if game_board[0][0] == "X" and game_board[0][1] == "X" and game_board[0][2] == "X":
+        print(name1 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
+    if game_board[1][0] == "X" and game_board[1][1] == "X" and game_board[1][2] == "X":
+        print(name1 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
+    if game_board[2][0] == "X" and game_board[2][1] == "X" and game_board[2][1] == "X":
+        print(name1 + " has one  Congratulations!!")
 
-elif game_board[0][2] == "X" and game_board[1][2] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][2] == "Y" and game_board[1][2] == "Y" and game_board[2][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-#the above is vertical win
-if game_board[0][0] == "X" and game_board[0][1] == "X" and game_board[0][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][0] == "Y" and game_board[0][1] == "Y" and game_board[0][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
+    if game_board[0][0] == "X" and game_board[1][1] == "X" and game_board[2][2] == "X":
+        print(name1 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
+    if game_board[0][2] == "X" and game_board[1][1] == "X" and game_board[2][0] == "X":
+        print(name1 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
 
-elif game_board[1][0] == "X" and game_board[1][1] == "X" and game_board[1][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[1][0] == "Y" and game_board[1][1] == "Y" and game_board[1][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
+    if game_board[0][0] == "X" and game_board[1][0] == "X" and game_board[2][0] == "X":
+        print(name1 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
+    if game_board[0][1] == "X" and game_board[1][1] == "X" and game_board[2][1] == "X":
+        print(name1 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
+    if game_board[0][2] == "X" and game_board[1][2] == "X" and game_board[2][2] == "X":
+        print(name1 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
+def logic2():
+    if game_board[0][0] == "O" and game_board[0][1] == "O" and game_board[0][2] == "O":
+        print(name2 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
+    elif game_board[1][0] == "O" and game_board[1][1] == "O" and game_board[1][2] == "O":
+        print(name2 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
+    elif game_board[2][0] == "O" and game_board[2][1] == "O" and game_board[2][1] == "O":
+        print(name2 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
 
-elif game_board[2][0] == "X" and game_board[2][1] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[2][0] == "X" and game_board[2][1] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-#the above is horizontal win
-else:
-    print("It is now the chance of " + name1)
-    position1 = int(input())
-    plotting_x()
-if game_board[0][0] == "X" and game_board[1][1] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" +" wins CONGRATS!" )
-elif game_board[0][0] == "Y" and game_board[1][1] == "Y" and game_board[2][2] == "Y":
-    print("Strike " + name2 + "" +" wins congrats!" )
-elif game_board[0][2] == "X" and game_board[1][1] == "X" and game_board[2][0] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][2] == "Y" and game_board[1][1] == "Y" and game_board[2][0] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-#the above is diagnol win
+    elif game_board[0][0] == "O" and game_board[1][1] == "O" and game_board[2][2] == "O":
+        print(name2 + " has oneCongratulations!!")
+    elif game_board[0][2] == "O" and game_board[1][1] == "O" and game_board[2][0] == "O":
+        print(name2 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
 
-if game_board[0][0] == "X" and game_board[1][0] == "X" and game_board[2][0] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][0] == "Y" and game_board[1][0] == "Y" and game_board[2][0] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
+    elif game_board[0][0] == "O" and game_board[1][0] == "O" and game_board[2][0] == "O":
+        print(name2 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
+    elif game_board[0][1] == "O" and game_board[1][1] == "O" and game_board[2][1] == "O":
+        print(name2 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
+    elif game_board[0][2] == "O" and game_board[1][2] == "X" and game_board[2][2] == "O":
+        print(name2 + " has one Congratulations!! GAME OVER!!!!!!!!!!!!!")
 
-elif game_board[0][1] == "X" and game_board[1][1] == "X" and game_board[2][1] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][1] == "Y" and game_board[1][1] == "Y" and game_board[2][1] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
+everthing2()
+logic2()
 
-elif game_board[0][2] == "X" and game_board[1][2] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][2] == "Y" and game_board[1][2] == "Y" and game_board[2][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-#the above is vertical win
+everthing1()
+logic1()
 
-if game_board[0][0] == "X" and game_board[0][1] == "X" and game_board[0][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][0] == "Y" and game_board[0][1] == "Y" and game_board[0][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
+everthing2()
+logic2()
 
-elif game_board[1][0] == "X" and game_board[1][1] == "X" and game_board[1][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[1][0] == "Y" and game_board[1][1] == "Y" and game_board[1][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
+everthing1()
+logic1()
 
-elif game_board[2][0] == "X" and game_board[2][1] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[2][0] == "X" and game_board[2][1] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-#the above is vertical win
-else:
-    print("It is now the chance of " + name2)
-    position2 = int(input())
-    plotting_y()
+everthing2()
+logic2()
+#logic 1.0
+logic1()
+#logic 2.0
 
-
-#Diagnol win only
-if game_board[0][0] == "X" and game_board[1][1] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" +" wins CONGRATS!" )
-elif game_board[0][0] == "Y" and game_board[1][1] == "Y" and game_board[2][2] == "Y":
-    print("Strike " + name2 + "" +" wins congrats!" )
-
-if game_board[0][2] == "X" and game_board[1][1] == "X" and game_board[2][0] == "X":
-    print("Strike " + name1 + "" + "wins CONGRATS!")
-elif game_board[0][2] == "Y" and game_board[1][1] == "Y" and game_board[2][0] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-
-
-
-#vertical win only
-if game_board[0][0] == "X" and game_board[1][0] == "X" and game_board[2][0] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][0] == "Y" and game_board[1][0] == "Y" and game_board[2][0] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-
-if game_board[0][1] == "X" and game_board[1][1] == "X" and game_board[2][1] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][1] == "Y" and game_board[1][1] == "Y" and game_board[2][1] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-
-if game_board[0][2] == "X" and game_board[1][2] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][2] == "Y" and game_board[1][2] == "Y" and game_board[2][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-
-#horizontal win only
-
-if game_board[0][0] == "X" and game_board[0][1] == "X" and game_board[0][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[0][0] == "Y" and game_board[0][1] == "Y" and game_board[0][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-
-if game_board[1][0] == "X" and game_board[1][1] == "X" and game_board[1][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[1][0] == "Y" and game_board[1][1] == "Y" and game_board[1][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
-
-if game_board[2][0] == "X" and game_board[2][1] == "X" and game_board[2][2] == "X":
-    print("Strike " + name1 + "" + " wins CONGRATS!")
-elif game_board[2][0] == "Y" and game_board[2][1] == "Y" and game_board[2][2] == "Y":
-    print("Strike " + name2 + "" + " wins CONGRATS!")
+logic2()
